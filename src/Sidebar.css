@@ -18,10 +18,9 @@
     min-width: 10vw;
 }
 
-.sidebar__headerRight  .MuiSvgIcon-root{
+.sidebar__headerRight .MuiSvgIcon-root{
     margin-right: 2vw;
     font-size: 24px !important;
-    /* background-color: rebeccapurple; */
 }
 
 .sidebar__search {
@@ -41,7 +40,7 @@
     border-radius: 20px;
 }
 
-.sidebar__searchContainer .MuiSvgIcon-root {
+.sidebar__searchContainer > .MuiSvgIcon-root {
     color: gray;
     padding: 10px;
 }
