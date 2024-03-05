@@ -71,6 +71,7 @@
 
 .chat__footer > form {
     flex: 1;
+    outline-width: 0;
     display: flex;
 }
 
