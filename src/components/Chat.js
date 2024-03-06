@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import "./Chat.css"
 import { Avatar, IconButton } from '@mui/material';
 import { AttachFile, InsertEmoticon, MoreVert, SearchOutlined } from '@mui/icons-material';
 import MicIcon from "@mui/icons-material/Mic";
-import axios from './config/axios.js';
+import axios from '../config/axios.js';
+import Message from './Message.js';
 
 const Chat = ({ messages }) => {
   const [input, setInput] = useState("");
@@ -40,12 +41,15 @@ const Chat = ({ messages }) => {
         </div>
         <div className='chat__body'>
           {messages.map((message, index) => (
-            <p className={`chat__message ${!message.recieved && "chat__receiver"}`}
-            key={`${message.name}_${index}`}>
-            <span className='chat__name'>{message.name}</span>
-            {message.message}
-            <span className='chat__timestamp'>{message.timeStamp}</span>
-          </p>
+            <Fragment key={index}>
+              <Message
+                recieved={message.received}
+                message={message.message}
+                timeStamp={message.timeStamp}
+                name={message.name}
+              />
+            </Fragment>
+
           ))}
         </div>
         <div className='chat__footer'>
